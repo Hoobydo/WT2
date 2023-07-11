@@ -22,6 +22,11 @@ left: 20%;
 background-color: rgb(237, 232, 226);
 box-shadow: 0px 4px 4px 0px #01010140;
 }
+#vid{
+width: 300px;
+height: 600px;
+ overflow: hidden;  
+}
 .play{
   
 top: 75vh;
@@ -38,11 +43,15 @@ position: absolute;
 
 }
 #button1{
-    border-radius: 100px;
-       
-    border-width: 0;
+    border-radius: 80px;
+       width:80px;
+       height: 80px;
+    /* border-width: 0; */
     position: absolute;
-    opacity: 0;
+     opacity: 0; 
+    top: 75vh;
+position: fixed; 
+ left: 36%;
 }
 
     </style>
@@ -53,14 +62,22 @@ position: absolute;
     <div class="wrapper">
         <!-- <div class="bg"></div> -->
             <div class="timer"> &nbsp;</div>
+             <div id="vid" ><video id="vidd" height="350px" width="348px" src="136006 (720p).mp4" ></video></div> 
 
             <div class="play">
-                <img src="Group 1.png"></div>
-                <button id="button1"></button>
+                 <img src="Group 1.png"></div> 
+                <button id="button1" onclick="playVid()"></button>
 
         </div>
 
     </div>
+    <script>
+let vid = document.getElementById("vidd");
+function playVid() { 
+  vid.play(); 
+} 
+    </script>
+
 
 
 </body>
