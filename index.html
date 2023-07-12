@@ -15,11 +15,11 @@ body{
 .timerr{
     position:relative;
     width: 60%;
-height: 10vh;
-top: 8vh;
+height: 11vh;
+top: 10vh;
 border-radius: 30px;
 left: 20%;
-background-color: rgb(237, 232, 226);
+background-color: rgb(255, 255, 255);
 box-shadow: 0px 4px 4px 0px #01010140;
 }
 #vid{
@@ -29,9 +29,15 @@ height: 600px;
 position: relative;
  /* overflow: hidden;   */
 }
+#vidi{
+    top:11%;
+    position: absolute; 
+    left: 30%;
+
+}
 .play{
   
-top: 75vh;
+top: 77vh;
 position: fixed; 
  left: 36%;
 /* display: flex;
@@ -60,15 +66,22 @@ position: fixed;
 </head>
 <body>
 
-
+    <!-- <div>
+        <span class="count-digit">3</span>
+        <span class="count-digit">0</span>
+        <span class="separator">:</span>
+        <span class="count-digit">0</span>
+        <span class="count-digit">0</span>
+     </div> -->
     <div class="wrapper">
         <!-- <div class="bg"></div> -->
             <div class="timerr"> &nbsp;</div>
              <div id="vid" ><video id="vidd" height="350px" width="348px" src="ezgif.com-crop.mp4" ></video></div> 
+             <div id="vidi" ><video id="viddi" height="80px"src="30 Minutes Countdown Timer 4K (no sound) - White (1080p).mp4" ></video></div> 
 
             <div class="play">
                  <img src="Group 1.png"></div> 
-                <button id="button1" onclick="playVid()"></button>
+                <button id="button1" onclick="playVid(); playVidi()"></button>
 
         </div>
 
@@ -81,28 +94,22 @@ let vid = document.getElementById("vidd");
 function playVid() { 
   vid.play(); 
 } 
+let vidi = document.getElementById("viddi");
+function playVidi() { 
+  vidi.play(); 
+} 
 
-function countdown() {
-        var seconds =159;
-        function tick() {
-          var counter = document.getElementById("counter");
-          seconds--;
-          counter.innerHTML =
-            "0:" + (seconds < 10 ? "0" : "") + String(seconds);
-          if (seconds > 0) {
-            setTimeout(tick, 1000);
-          } else {
-            document.getElementById("verifiBtn").innerHTML = `
-                <div class="Btn" id="ResendBtn">
-                    <button type="submit">Resend</button>
-                </div>
-            `;
-            document.getElementById("counter").innerHTML = "";
-          }
-        }
-        tick();
-      }
-      countdown();
+// function countDown() {
+//   var mins = secs / 60;
+//   var element = document.getElementById("status");
+//   element.innerHTML =  mins.toFixed(2) ;
+//   secs--;
+//   setTimeout(countDown, 1000);
+//   if (secs < 1) {
+//     element.innerHTML = '<h2>You have no time left!</h2>';
+//     secs = 1800;
+//   }
+// }
     </script>
 
 
