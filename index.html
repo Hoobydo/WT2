@@ -12,7 +12,7 @@ body{
    
 
 }
-.timer{
+.timerr{
     position:relative;
     width: 60%;
 height: 10vh;
@@ -23,9 +23,11 @@ background-color: rgb(237, 232, 226);
 box-shadow: 0px 4px 4px 0px #01010140;
 }
 #vid{
+    top: 13.5vh;
 width: 300px;
 height: 600px;
- overflow: hidden;  
+position: relative;
+ /* overflow: hidden;   */
 }
 .play{
   
@@ -61,8 +63,8 @@ position: fixed;
 
     <div class="wrapper">
         <!-- <div class="bg"></div> -->
-            <div class="timer"> &nbsp;</div>
-             <div id="vid" ><video id="vidd" height="350px" width="348px" src="136006 (720p).mp4" ></video></div> 
+            <div class="timerr"> &nbsp;</div>
+             <div id="vid" ><video id="vidd" height="350px" width="348px" src="ezgif.com-crop.mp4" ></video></div> 
 
             <div class="play">
                  <img src="Group 1.png"></div> 
@@ -71,11 +73,36 @@ position: fixed;
         </div>
 
     </div>
+    <div class="timer">
+        <span id="counter"></span>
+    </div>
     <script>
 let vid = document.getElementById("vidd");
 function playVid() { 
   vid.play(); 
 } 
+
+function countdown() {
+        var seconds =159;
+        function tick() {
+          var counter = document.getElementById("counter");
+          seconds--;
+          counter.innerHTML =
+            "0:" + (seconds < 10 ? "0" : "") + String(seconds);
+          if (seconds > 0) {
+            setTimeout(tick, 1000);
+          } else {
+            document.getElementById("verifiBtn").innerHTML = `
+                <div class="Btn" id="ResendBtn">
+                    <button type="submit">Resend</button>
+                </div>
+            `;
+            document.getElementById("counter").innerHTML = "";
+          }
+        }
+        tick();
+      }
+      countdown();
     </script>
 
 
